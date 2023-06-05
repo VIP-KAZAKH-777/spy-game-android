@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    style="@style/SCREEN">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="60dp"
+            style="@style/ICON" />
+
+        <TextView
+            android:id="@+id/spy_game"
+            style="@style/TEXT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="60dp"
+            android:fontFamily="@font/inder"
+            android:text="@string/spy_game"
+            android:textSize="35sp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/guess_the_spy"
+        style="@style/TEXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:letterSpacing="0.5"
+        android:text="@string/guess_the_spy"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guess_the_spy">
+
+        <ImageView
+            android:id="@+id/moon_button"
+            style="@style/MOON"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="switchTheme"
+            android:contentDescription="@string/switches_theme" />
+
+        <ImageView
+            android:id="@+id/help_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="openRules"
+            style="@style/HELP"
+            android:contentDescription="@string/opens_rules"/>
+
+        <ImageView
+            android:id="@+id/settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/SETTINGS"
+            android:onClick="openSettings"
+            android:contentDescription="opens settings"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/start_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_marginTop="60dp"
+        style="@style/BUTTON_BORDER"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageView
+            android:id="@+id/play_button"
+            android:layout_width="95dp"
+            android:layout_height="75dp"
+            style="@style/PLAY" />
+
+        <TextView
+            android:layout_width="125dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/background"
+            android:fontFamily="@font/inter_bold"
+            android:letterSpacing="0.1"
+            android:text="@string/start"
+            android:textAlignment="textStart"
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            style="@style/TEXT"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/GITHUB"
+        android:onClick="openGithub"
+        android:contentDescription="@string/opens_github"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

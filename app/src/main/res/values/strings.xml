@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Spy</string>
+    <string name="spy_game">SPY game</string>
+    <string name="guess_the_spy">Guess the spy</string>
+    <string name="start">Start</string>
+    <string name="switches_theme">switches theme</string>
+    <string name="rules">RULES</string>
+    <string name="rules_text">There are 2 types of players - spies and regular players.
+Non-spy players will be given the location, and the goal of the spies is to guess the location before the game ends.
+The players\' objective is to determine who the spies are.
+
+As the game starts, all players will ask questions each other one by one (only yes or no questions are allowed).
+It starts with one player choosing another one to answer his question related to the secret location.
+Then the one who was asked will be the next to choose and ask a question.
+This cycle repeats until the end of a game.
+At the end all players should start discussing whom to eliminate.
+
+The player with most votes gets eliminated (if a player was a spy, players win. Otherwise spies\' win).</string>
+    <string name="opens_rules">opens_rules</string>
+    <string name="exits_rules_page">exits rules page</string>
+    <string name="opens_github">opens github</string>
+    <string name="save">Save</string>
+    <string name="number_of_players">Number of players</string>
+    <string name="number_of_spies">Number of spies</string>
+    <string name="choose_locations">choose locations</string>
+</resources>

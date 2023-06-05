@@ -1,0 +1,108 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Spy" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Night mode -->
+    <!-- Screen background -->
+    <style name="SCREEN">
+        <item name="android:background">@color/background</item>
+    </style>
+    <!-- Text color -->
+    <style name="TEXT">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- Button color -->
+    <style name="BUTTON">
+        <item name="android:background">@color/background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- Button border -->
+    <style name="BUTTON_BORDER">
+        <item name="android:background">@drawable/button_border</item>
+    </style>
+    <!-- Settings text -->
+    <style name="SETTINGS_TEXT">
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:letterSpacing">0.2</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginTop">40dp</item>
+    </style>
+    <!-- Settings minus button -->
+    <style name="SETTINGS_MINUS_BUTTON">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+        <item name="srcCompat">@mipmap/minus_foreground</item>
+    </style>
+    <!-- Settings number -->
+    <style name="SETTINGS_NUMBER">
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- Settings plus button -->
+    <style name="SETTINGS_PLUS_BUTTON">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="srcCompat">@mipmap/plus_foreground</item>
+    </style>
+    <!-- Main icon -->
+    <style name="ICON">
+        <item name="srcCompat">@mipmap/icon_foreground</item>
+    </style>
+    <!-- Moon icon -->
+    <style name="MOON">
+        <item name="srcCompat">@mipmap/moon_foreground</item>
+    </style>
+    <!-- Help icon -->
+    <style name="HELP">
+        <item name="srcCompat">@mipmap/help_foreground</item>
+    </style>
+    <!-- Settings icon -->
+    <style name="SETTINGS">
+        <item name="srcCompat">@mipmap/settings_foreground</item>
+    </style>
+    <!-- Start icon -->
+    <style name="PLAY">
+        <item name="srcCompat">@mipmap/play_foreground</item>
+    </style>
+    <!-- Github icon -->
+    <style name="GITHUB">
+        <item name="srcCompat">@mipmap/github_icon_foreground</item>
+    </style>
+    <!-- Map icon -->
+    <style name="MAP">
+        <item name="srcCompat">@mipmap/map_pin_foreground</item>
+    </style>
+    <!-- Location text -->
+    <style name="LOC_TEXT">
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">55dp</item>
+    </style>
+    <!-- Arrows -->
+    <style name="ARROW">
+        <item name="srcCompat">@drawable/arrow_down</item>
+    </style>
+</resources>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SCREEN"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Locations"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            style="@style/MAP"/>
+
+        <TextView
+            style="@style/TEXT"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:text="Locations"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="391dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/places_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/LOC_TEXT"
+                android:text="Places" />
+
+            <ImageView
+                style="@style/ARROW"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/countries_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/LOC_TEXT"
+                android:text="Countries" />
+
+            <ImageView
+                style="@style/ARROW"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/transports_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/LOC_TEXT"
+                android:text="Transports" />
+
+            <ImageView
+                style="@style/ARROW"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rooms_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rectangle"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/LOC_TEXT"
+                android:text="Rooms" />
+
+            <ImageView
+                style="@style/ARROW"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:id="@+id/save_button"
+        style="@style/BUTTON_BORDER"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TEXT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/background"
+            android:fontFamily="@font/inter_bold"
+            android:gravity="center"
+            android:letterSpacing="0.1"
+            android:text="@string/save"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+
+</RelativeLayout>
