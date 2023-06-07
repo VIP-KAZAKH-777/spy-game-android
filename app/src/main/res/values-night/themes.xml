@@ -96,13 +96,22 @@
         <item name="android:letterSpacing">0.05</item>
         <item name="android:fontFamily">@font/inter_bold</item>
         <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/white</item>
         <item name="android:layout_marginStart">20dp</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">55dp</item>
     </style>
     <!-- Arrows -->
     <style name="ARROW">
         <item name="srcCompat">@drawable/arrow_down</item>
+    </style>
+    <!-- AlertDialog -->
+    <style name="DIALOG" parent="Theme.AppCompat.Dialog">
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="backgroundTint">@color/grey</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 </resources>

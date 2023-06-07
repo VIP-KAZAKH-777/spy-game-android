@@ -1,15 +1,26 @@
 package com.example.spy;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
+
+import com.example.spy.models.Location;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Locations extends AppCompatActivity {
 
@@ -32,20 +43,16 @@ public class Locations extends AppCompatActivity {
         rooms = findViewById(R.id.rooms_layout);
         save_button = findViewById(R.id.save_button);
 
+        places.setOnClickListener(v -> Location.selectLocation(1, this));
+        countries.setOnClickListener(v -> Location.selectLocation(2, this));
+        transports.setOnClickListener(v -> Location.selectLocation(3, this));
+        rooms.setOnClickListener(v -> Location.selectLocation(4, this));
+
         save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                finish();
             }
         });
-
-//        places.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(2, 2);
-//                params.setMargins(0, 50, 0, 0);
-//                countries.setLayoutParams(params);
-//            }
-//        });
     }
 }
