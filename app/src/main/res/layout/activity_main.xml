@@ -15,7 +15,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:id="@+id/icon"
@@ -24,7 +25,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="60dp"
             android:layout_marginTop="60dp"
-            style="@style/ICON" />
+            style="@style/ICON"
+            android:contentDescription="@string/icon" />
 
         <TextView
             android:id="@+id/spy_game"
@@ -68,7 +70,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="switchTheme"
             android:contentDescription="@string/switches_theme" />
 
         <ImageView
@@ -76,7 +77,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="openRules"
             style="@style/HELP"
             android:contentDescription="@string/opens_rules"/>
 
@@ -85,9 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            style="@style/SETTINGS"
-            android:onClick="openSettings"
-            android:contentDescription="opens settings"/>
+            style="@style/SETTINGS"/>
     </LinearLayout>
 
     <LinearLayout
@@ -106,7 +104,8 @@
             android:id="@+id/play_button"
             android:layout_width="95dp"
             android:layout_height="75dp"
-            style="@style/PLAY" />
+            style="@style/PLAY"
+            android:contentDescription="@string/startbutton" />
 
         <TextView
             android:layout_width="125dp"
@@ -125,7 +124,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/github_button"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="160dp"
@@ -135,7 +134,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         style="@style/GITHUB"
-        android:onClick="openGithub"
         android:contentDescription="@string/opens_github"/>
 
 

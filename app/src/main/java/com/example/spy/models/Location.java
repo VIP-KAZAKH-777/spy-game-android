@@ -1,18 +1,9 @@
 package com.example.spy.models;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AlertDialog;
-
-import com.example.spy.Locations;
 import com.example.spy.R;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Location {
     private static final ArrayList<String> selectedLocations = new ArrayList<>();
@@ -66,17 +57,17 @@ public class Location {
 
         builder.setMultiChoiceItems(array, selected, (dialog, which, isChecked) -> {
             if (isChecked) {
-                Location.addLocation(array[which]);
+                addLocation(array[which]);
             }
             else {
-                Location.removeLocation(array[which]);
+                removeLocation(array[which]);
             }
         })
                 .setPositiveButton("Save", (dialog, which) -> dialog.dismiss())
                 .setNeutralButton("Clear all", (dialog, which) -> {
             for (int i = 0; i < selected.length; ++i) {
                 selected[i] = false;
-                Location.clearSelectedLocations();
+                clearSelectedLocations();
             }
         });
         builder.show();

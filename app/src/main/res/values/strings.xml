@@ -23,4 +23,12 @@ The player with most votes gets eliminated (if a player was a spy, players win. 
     <string name="number_of_players">Number of players</string>
     <string name="number_of_spies">Number of spies</string>
     <string name="choose_locations">choose locations</string>
+    <string name="startbutton">StartButton</string>
+    <string name="icon">icon</string>
+    <string name="settings">Settings</string>
+    <string name="minus_button">Minus button</string>
+    <string name="plus_button">Plus button</string>
+    <string name="_5">5</string>
+    <string name="time_in_mins">Time (in mins)</string>
+    <string name="_1">1</string>
 </resources>

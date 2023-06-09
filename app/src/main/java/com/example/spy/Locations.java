@@ -1,26 +1,12 @@
 package com.example.spy;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
-
 import com.example.spy.models.Location;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Locations extends AppCompatActivity {
 
@@ -48,11 +34,6 @@ public class Locations extends AppCompatActivity {
         transports.setOnClickListener(v -> Location.selectLocation(3, this));
         rooms.setOnClickListener(v -> Location.selectLocation(4, this));
 
-        save_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        save_button.setOnClickListener(v -> finish());
     }
 }

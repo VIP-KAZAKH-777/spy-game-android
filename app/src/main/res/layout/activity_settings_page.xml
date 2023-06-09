@@ -31,7 +31,8 @@
                 android:layout_height="70dp"
                 android:layout_marginStart="40dp"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/settings_2_foreground" />
+                app:srcCompat="@mipmap/settings_2_foreground"
+                android:contentDescription="@string/settings" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -42,7 +43,7 @@
                 android:fontFamily="@font/inter_bold"
                 android:gravity="center_vertical"
                 android:letterSpacing="0.2"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textAlignment="textStart"
                 android:textSize="30sp"
                 tools:ignore="RtlCompat" />
@@ -64,21 +65,19 @@
             <ImageView
                 android:id="@+id/minus_players"
                 style="@style/SETTINGS_MINUS_BUTTON"
-                android:contentDescription="Minus button"
-                android:onClick="minusPlayers"/>
+                android:contentDescription="@string/minus_button" />
 
             <TextView
                 android:id="@+id/players_number"
                 style="@style/SETTINGS_NUMBER"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="5" />
+                android:text="@string/_5" />
 
             <ImageView
                 android:id="@+id/plus_players"
                 style="@style/SETTINGS_PLUS_BUTTON"
-                android:onClick="plusPlayers"
-                android:contentDescription="Plus button" />
+                android:contentDescription="@string/plus_button" />
         </LinearLayout>
 
         <TextView
@@ -97,28 +96,26 @@
             <ImageView
                 android:id="@+id/minus_spies"
                 style="@style/SETTINGS_MINUS_BUTTON"
-                android:contentDescription="Minus button"
-                android:onClick="minusSpies"/>
+                android:contentDescription="@string/minus_button"/>
 
             <TextView
                 android:id="@+id/spies_number"
                 style="@style/SETTINGS_NUMBER"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="1" />
+                android:text="@string/_1" />
 
             <ImageView
                 android:id="@+id/plus_spies"
                 style="@style/SETTINGS_PLUS_BUTTON"
-                android:contentDescription="Plus button"
-                android:onClick="plusSpies"/>
+                android:contentDescription="@string/plus_button"/>
         </LinearLayout>
 
         <TextView
             style="@style/SETTINGS_TEXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time (in mins)" />
+            android:text="@string/time_in_mins" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -130,21 +127,19 @@
             <ImageView
                 android:id="@+id/minus_time"
                 style="@style/SETTINGS_MINUS_BUTTON"
-                android:contentDescription="Minus button"
-                android:onClick="minusMinute"/>
+                android:contentDescription="@string/minus_button"/>
 
             <TextView
                 android:id="@+id/minutes"
                 style="@style/SETTINGS_NUMBER"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="5" />
+                android:text="@string/_5" />
 
             <ImageView
                 android:id="@+id/plus_time"
                 style="@style/SETTINGS_PLUS_BUTTON"
-                android:contentDescription="Plus button"
-                android:onClick="plusMinute"/>
+                android:contentDescription="@string/plus_button"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -159,8 +154,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        android:onClick="openLocations">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <TextView
             style="@style/TEXT"
@@ -186,8 +180,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="exitSettings">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             style="@style/TEXT"
