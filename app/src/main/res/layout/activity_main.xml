@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +20,10 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
             style="@style/ICON"
             android:contentDescription="@string/icon" />
 
@@ -64,7 +63,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guess_the_spy">
 
-        <ImageView
+        <ImageButton
+            android:background="@android:color/transparent"
             android:id="@+id/moon_button"
             style="@style/MOON"
             android:layout_width="wrap_content"
@@ -72,7 +72,8 @@
             android:layout_weight="1"
             android:contentDescription="@string/switches_theme" />
 
-        <ImageView
+        <ImageButton
+            android:background="@android:color/transparent"
             android:id="@+id/help_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -80,17 +81,19 @@
             style="@style/HELP"
             android:contentDescription="@string/opens_rules"/>
 
-        <ImageView
+        <ImageButton
+            android:background="@android:color/transparent"
             android:id="@+id/settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            style="@style/SETTINGS"/>
+            style="@style/SETTINGS"
+            android:contentDescription="@string/opens_settings" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/start_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="75dp"
         android:layout_marginTop="60dp"
         style="@style/BUTTON_BORDER"
@@ -102,15 +105,18 @@
 
         <ImageView
             android:id="@+id/play_button"
-            android:layout_width="95dp"
-            android:layout_height="75dp"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
             style="@style/PLAY"
             android:contentDescription="@string/startbutton" />
 
         <TextView
-            android:layout_width="125dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="70dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginHorizontal="20dp"
             android:backgroundTint="@color/background"
             android:fontFamily="@font/inter_bold"
             android:letterSpacing="0.1"
@@ -123,7 +129,8 @@
 
     </LinearLayout>
 
-    <ImageView
+    <ImageButton
+        android:background="@android:color/transparent"
         android:id="@+id/github_button"
         android:layout_width="70dp"
         android:layout_height="70dp"

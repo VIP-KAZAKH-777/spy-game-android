@@ -18,6 +18,7 @@
     <!-- Screen background -->
     <style name="SCREEN">
         <item name="android:background">@color/light_background</item>
+        <item name="backgroundTint">@color/light_background</item>
     </style>
     <!-- Text color -->
     <style name="TEXT">
@@ -35,19 +36,19 @@
     </style>
     <!-- Main icon -->
     <style name="ICON">
-        <item name="srcCompat">@mipmap/icon_light_foreground</item>
+        <item name="srcCompat">@drawable/icon_light</item>
     </style>
     <!-- Moon icon -->
     <style name="MOON">
-        <item name="srcCompat">@mipmap/sun_foreground</item>
+        <item name="srcCompat">@drawable/sun</item>
     </style>
     <!-- Help icon -->
     <style name="HELP">
-        <item name="srcCompat">@mipmap/help_light_foreground</item>
+        <item name="srcCompat">@drawable/help_light</item>
     </style>
     <!-- Settings icon -->
     <style name="SETTINGS">
-        <item name="srcCompat">@mipmap/settings_light_foreground</item>
+        <item name="srcCompat">@drawable/settings_light</item>
     </style>
     <!-- Settings text -->
     <style name="SETTINGS_TEXT">
@@ -63,7 +64,7 @@
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_marginEnd">20dp</item>
-        <item name="srcCompat">@mipmap/minus_light_foreground</item>
+        <item name="srcCompat">@drawable/minus_light</item>
     </style>
     <!-- Settings number -->
     <style name="SETTINGS_NUMBER">
@@ -77,15 +78,15 @@
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_marginStart">20dp</item>
-        <item name="srcCompat">@mipmap/plus_light_foreground</item>
+        <item name="srcCompat">@drawable/plus_light</item>
     </style>
     <!-- Start icon -->
     <style name="PLAY">
-        <item name="srcCompat">@mipmap/play_light_foreground</item>
+        <item name="srcCompat">@drawable/play_light</item>
     </style>
     <!-- Github icon -->
     <style name="GITHUB">
-        <item name="srcCompat">@mipmap/github_light_foreground</item>
+        <item name="srcCompat">@drawable/github</item>
     </style>
     <!-- Map icon -->
     <style name="MAP">

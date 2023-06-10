@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingVertical="150dp"
+    android:paddingHorizontal="30dp">
+
+    <com.wajahatkarim3.easyflipview.EasyFlipView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:flipOnTouch="true"
+        app:flipEnabled="true"
+        app:flipDuration="400"
+        app:flipType="horizontal"
+        app:flipFrom="right"
+        app:autoFlipBack="false">
+
+    <!-- Back Layout Goes Here -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/grey"
+            android:paddingVertical="10dp"
+            app:cardCornerRadius="30dp"
+            android:background="@drawable/button_border_light">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="30dp">
+
+                <ImageView
+                    android:id="@+id/player_img"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    style="@style/ICON"
+                    android:layout_gravity="center"
+                    android:contentDescription="icon" />
+
+                <TextView
+                    style="@style/TEXT"
+                    android:id="@+id/player_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yousp"
+                    android:fontFamily="@font/inter"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    style="@style/TEXT"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/player_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loc"
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    <!-- Front Layout Goes Here -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/grey"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="30dp">
+
+                <TextView
+                    android:id="@+id/player_num"
+                    style="@style/TEXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/player_1"
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"/>
+
+                <ImageView
+                    android:layout_marginVertical="40dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/refresh"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/refresh" />
+
+                <TextView
+                    style="@style/TEXT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tap_here"
+                    android:fontFamily="@font/inter_bold"
+                    android:textSize="30sp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </com.wajahatkarim3.easyflipview.EasyFlipView>
+
+</LinearLayout>

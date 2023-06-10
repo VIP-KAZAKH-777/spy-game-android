@@ -12,12 +12,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.example.spy.models.Location;
 
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    ImageButton github, theme, help, settings;
     boolean nightMode;
 
     @Override
@@ -29,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
         nightMode = sharedPreferences.getBoolean("night", true);
 
-        ImageView github, theme, help, settings;
         github = findViewById(R.id.github_button);
         theme = findViewById(R.id.moon_button);
         help = findViewById(R.id.help_button);
@@ -38,9 +42,21 @@ public class MainActivity extends AppCompatActivity {
         theme.setOnClickListener(this::switchTheme);
         help.setOnClickListener(this::openRules);
         settings.setOnClickListener(this::openSettings);
+
+        LinearLayout start = findViewById(R.id.start_layout);
+        start.setOnClickListener((v) -> startGame());
     }
 
-    public void switchTheme(View view) {
+    private void startGame() {
+        if (Location.getLocations().size() == 0) {
+            Toast.makeText(MainActivity.this, "Please choose locations in settings!", Toast.LENGTH_LONG).show();
+            return;
+        }
+        Intent intent = new Intent(MainActivity.this, GameStartedPage.class);
+        startActivity(intent);
+    }
+
+    private void switchTheme(View view) {
         nightMode = !nightMode;
         if (nightMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -55,17 +71,17 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    public void openRules(View view){
+    private void openRules(View view){
         Intent intent = new Intent(this, RulesPage.class);
         startActivity(intent);
     }
 
-    public void openSettings(View view){
+    private void openSettings(View view){
         Intent intent = new Intent(this, SettingsPage.class);
         startActivity(intent);
     }
 
-    public void openGithub(View view){
+    private void openGithub(View view){
         String url = "https://github.com/VIP-KAZAKH-777/spy-game-android";
         Uri uri = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);

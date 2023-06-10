@@ -37,6 +37,10 @@ public class Location {
         }
     }
 
+    public static String getRandomLocation() {
+        return selectedLocations.get((int) (Math.random() * selectedLocations.size()));
+    }
+
     public static ArrayList<String> getLocations() {
         return selectedLocations;
     }

@@ -10,11 +10,8 @@ import com.example.spy.models.Location;
 
 public class Locations extends AppCompatActivity {
 
-    RelativeLayout places;
-    RelativeLayout countries;
-    RelativeLayout transports;
-    RelativeLayout rooms;
-    LinearLayout save_button;
+    private RelativeLayout places, countries, transports, rooms;
+    private LinearLayout save_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

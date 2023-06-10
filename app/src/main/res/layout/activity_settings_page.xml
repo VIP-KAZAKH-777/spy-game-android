@@ -7,14 +7,12 @@
     tools:context=".SettingsPage"
     style="@style/SCREEN">
 
-
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="15dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,11 +25,11 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="70dp"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="40dp"
                 android:layout_weight="1"
-                app:srcCompat="@mipmap/settings_2_foreground"
+                app:srcCompat="@drawable/settings_red"
                 android:contentDescription="@string/settings" />
 
             <TextView
@@ -62,7 +60,8 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
+            <ImageButton
+                android:background="@android:color/transparent"
                 android:id="@+id/minus_players"
                 style="@style/SETTINGS_MINUS_BUTTON"
                 android:contentDescription="@string/minus_button" />
@@ -74,7 +73,8 @@
                 android:layout_height="match_parent"
                 android:text="@string/_5" />
 
-            <ImageView
+            <ImageButton
+                android:background="@android:color/transparent"
                 android:id="@+id/plus_players"
                 style="@style/SETTINGS_PLUS_BUTTON"
                 android:contentDescription="@string/plus_button" />
@@ -93,7 +93,8 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
+            <ImageButton
+                android:background="@android:color/transparent"
                 android:id="@+id/minus_spies"
                 style="@style/SETTINGS_MINUS_BUTTON"
                 android:contentDescription="@string/minus_button"/>
@@ -105,7 +106,8 @@
                 android:layout_height="match_parent"
                 android:text="@string/_1" />
 
-            <ImageView
+            <ImageButton
+                android:background="@android:color/transparent"
                 android:id="@+id/plus_spies"
                 style="@style/SETTINGS_PLUS_BUTTON"
                 android:contentDescription="@string/plus_button"/>
@@ -124,7 +126,8 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <ImageView
+            <ImageButton
+                android:background="@android:color/transparent"
                 android:id="@+id/minus_time"
                 style="@style/SETTINGS_MINUS_BUTTON"
                 android:contentDescription="@string/minus_button"/>
@@ -136,7 +139,8 @@
                 android:layout_height="match_parent"
                 android:text="@string/_5" />
 
-            <ImageView
+            <ImageButton
+                android:background="@android:color/transparent"
                 android:id="@+id/plus_time"
                 style="@style/SETTINGS_PLUS_BUTTON"
                 android:contentDescription="@string/plus_button"/>

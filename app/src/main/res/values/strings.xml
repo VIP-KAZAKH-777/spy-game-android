@@ -31,4 +31,12 @@ The player with most votes gets eliminated (if a player was a spy, players win. 
     <string name="_5">5</string>
     <string name="time_in_mins">Time (in mins)</string>
     <string name="_1">1</string>
+    <string name="role">See your role and pass on to the next player</string>
+    <string name="yousp">You are SPY!</string>
+    <string name="cancel">cancel</string>
+    <string name="player_1">Player 1</string>
+    <string name="loc">Location</string>
+    <string name="tap_here">Tap here</string>
+    <string name="refresh">refresh</string>
+    <string name="opens_settings">opens settings</string>
 </resources>

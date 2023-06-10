@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.example.spy.models.Settings;
 public class SettingsPage extends AppCompatActivity {
 
     private TextView playersNumber, spiesNumber, minutes;
+    private ImageButton minusPl, minusSp, minusTm, plusPl, plusSp, plusTm;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -33,12 +35,12 @@ public class SettingsPage extends AppCompatActivity {
         spiesNumber.setText(Integer.toString(Settings.SPIES_NUMBER));
         minutes.setText(Integer.toString((int) Settings.TIME / 1000 / 60));
 
-        ImageView minusPl = findViewById(R.id.minus_players);
-        ImageView plusPl = findViewById(R.id.plus_players);
-        ImageView minusSp = findViewById(R.id.minus_spies);
-        ImageView plusSp = findViewById(R.id.plus_spies);
-        ImageView minusTm = findViewById(R.id.minus_time);
-        ImageView plusTm = findViewById(R.id.plus_time);
+        minusPl = findViewById(R.id.minus_players);
+        plusPl = findViewById(R.id.plus_players);
+        minusSp = findViewById(R.id.minus_spies);
+        plusSp = findViewById(R.id.plus_spies);
+        minusTm = findViewById(R.id.minus_time);
+        plusTm = findViewById(R.id.plus_time);
         minusPl.setOnClickListener((v) -> Settings.minusPlayers(playersNumber));
         plusPl.setOnClickListener((v) -> Settings.plusPlayers(playersNumber));
         minusSp.setOnClickListener((v) -> Settings.minusSpies(spiesNumber));
