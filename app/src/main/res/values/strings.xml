@@ -39,4 +39,10 @@ The player with most votes gets eliminated (if a player was a spy, players win. 
     <string name="tap_here">Tap here</string>
     <string name="refresh">refresh</string>
     <string name="opens_settings">opens settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="min">00:00</string>
+    <string name="zeros">00:00</string>
+    <string name="pause_timer">pause timer</string>
+    <string name="started">The game has begun!</string>
 </resources>

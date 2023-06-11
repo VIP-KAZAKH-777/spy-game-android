@@ -11,10 +11,12 @@ import java.util.List;
 
 public class CardGenerator {
     private int spies;
+    private List<Integer> spiesPos;
     private final boolean[] plType;
 
     public CardGenerator() {
         spies = Settings.SPIES_NUMBER;
+        spiesPos = new ArrayList<>();
         plType = new boolean[Settings.PLAYERS_NUMBER];
         Arrays.fill(plType, false);
     }
@@ -25,6 +27,7 @@ public class CardGenerator {
         while (spies != 0) {
             if (Math.random() > 0.6 && !plType[i]) {
                 plType[i] = true;
+                spiesPos.add(i);
                 spies--;
             }
             if (i == Settings.PLAYERS_NUMBER - 1) i = 0;
@@ -46,5 +49,13 @@ public class CardGenerator {
             cards.add(card);
         }
         return cards;
+    }
+
+    public String getSpiesPositions() {
+        StringBuilder builder = new StringBuilder();
+        for (int a: spiesPos) {
+            builder.append("player ").append((a + 1)).append(" ");
+        }
+        return builder.toString();
     }
 }

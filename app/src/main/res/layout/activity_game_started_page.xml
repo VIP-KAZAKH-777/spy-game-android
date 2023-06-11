@@ -2,22 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/SCREEN"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameStartedPage"
-    style="@style/SCREEN">
+    tools:context=".GameStartedPage">
 
     <TextView
+        android:id="@+id/changeable_text"
+        style="@style/TEXT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
-        android:text="@string/role"
-        style="@style/TEXT"
-        android:textSize="22sp"
-        android:gravity="center"
         android:fontFamily="@font/inter_bold"
+        android:gravity="center"
+        android:text="@string/role"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,23 +33,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <LinearLayout
+        android:id="@+id/timer_layout"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/changeable_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cancel_layout">
 
+        <TextView
+            android:id="@+id/timer"
+            style="@style/TEXT"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/zeros"
+            android:textSize="80sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ImageButton
+                android:id="@+id/pause_button"
+                style="@style/BUTTON_BORDER"
+                android:background="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/pause_timer"
+                android:padding="15dp"
+                android:src="@drawable/pause_circle" />
+
+            <ImageButton
+                android:id="@+id/reset_button"
+                style="@style/BUTTON_BORDER"
+                android:background="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@id/pause_button"
+                android:contentDescription="@string/refresh"
+                android:padding="15dp"
+                android:src="@drawable/rotate_ccw" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/cancel_layout"
-        android:background="@drawable/button_border_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/button_border_red"
+        android:orientation="horizontal"
         android:paddingHorizontal="50dp"
         android:paddingVertical="15dp"
-        android:orientation="horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
         <TextView
-            android:textColor="@color/red"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/background"
@@ -57,6 +107,7 @@
             android:letterSpacing="0.1"
             android:text="@string/cancel"
             android:textAlignment="center"
+            android:textColor="@color/red"
             android:textSize="24sp"
             tools:ignore="RtlCompat" />
     </LinearLayout>
