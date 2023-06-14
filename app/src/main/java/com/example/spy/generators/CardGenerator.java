@@ -44,7 +44,7 @@ public class CardGenerator {
             else {
                 card.setPlayerType("Ordinary person");
                 card.setPlayerLoc(loc);
-                card.setImg(R.drawable.icon_light); //no-spy img
+                card.setImg(R.drawable.icon__3_); //no-spy img
             }
             cards.add(card);
         }

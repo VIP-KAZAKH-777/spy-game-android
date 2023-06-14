@@ -1,6 +1,5 @@
 package com.example.spy.models;
 
-import android.widget.ImageView;
 
 public class KolodaCard {
     private static int players = 0;

@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.spy.R;
 import com.example.spy.models.KolodaCard;
-import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 import java.util.List;
 

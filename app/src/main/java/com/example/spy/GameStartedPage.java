@@ -7,19 +7,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.spy.adapters.KolodaAdapter;
 import com.example.spy.generators.CardGenerator;
 import com.example.spy.models.KolodaCard;
 import com.example.spy.models.Settings;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.wajahatkarim3.easyflipview.EasyFlipView;
 import com.yalantis.library.Koloda;
 import com.yalantis.library.KolodaListener;
 
@@ -35,8 +31,6 @@ public class GameStartedPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_started_page);
 
@@ -86,7 +80,6 @@ public class GameStartedPage extends AppCompatActivity {
 
             @Override
             public void onCardSingleTap(int i) {
-
             }
 
             @Override
@@ -150,13 +143,19 @@ public class GameStartedPage extends AppCompatActivity {
                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(GameStartedPage.this);
                 builder.setCancelable(true);
                 builder.setTitle("Time's up!");
-                builder.setMessage("Spies are: " + gen.getSpiesPositions());
-                builder.setPositiveButton("finish", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Show spies", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
+                        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(GameStartedPage.this);
+                        builder.setMessage("Spies are: " + gen.getSpiesPositions()).show();
                     }
-                });
+                })
+                        .setNegativeButton("Leave", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        });
                 builder.show();
                 KolodaCard.resetPLayers();
             }

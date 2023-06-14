@@ -25,6 +25,7 @@
 
     <com.yalantis.library.Koloda
         android:id="@+id/koloda"
+        app:koloda_card_rotate_angle="60"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:koloda_card_layout="@layout/item_koloda"
