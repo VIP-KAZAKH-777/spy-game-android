@@ -3,9 +3,9 @@ package com.example.spy.models;
 import android.widget.TextView;
 
 public class Settings {
-    public static int PLAYERS_NUMBER = 5;
-    public static int SPIES_NUMBER = 1;
-    public static long TIME = 300_001;
+    public static int PLAYERS_NUMBER = 5; //global players number
+    public static int SPIES_NUMBER = 1; //global spies number
+    public static long TIME = 300_001; //global time in milliseconds
 
     public static void minusPlayers(TextView text){
         if (Settings.PLAYERS_NUMBER > 2 && Settings.PLAYERS_NUMBER * 0.3 > Settings.SPIES_NUMBER) Settings.PLAYERS_NUMBER--;

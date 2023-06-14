@@ -14,6 +14,8 @@ import com.example.spy.models.Settings;
 
 public class SettingsPage extends AppCompatActivity {
 
+    /* In settings every change is saved in Settings.java class, where all fields are static */
+
     private TextView playersNumber, spiesNumber, minutes;
     private ImageButton minusPl, minusSp, minusTm, plusPl, plusSp, plusTm;
 
@@ -26,6 +28,8 @@ public class SettingsPage extends AppCompatActivity {
         playersNumber = findViewById(R.id.players_number);
         spiesNumber = findViewById(R.id.spies_number);
         minutes = findViewById(R.id.minutes);
+
+        //Sets default players, spies number and time (in minutes)
         playersNumber.setText(Integer.toString(Settings.PLAYERS_NUMBER));
         spiesNumber.setText(Integer.toString(Settings.SPIES_NUMBER));
         minutes.setText(Integer.toString((int) Settings.TIME / 1000 / 60));
@@ -36,6 +40,8 @@ public class SettingsPage extends AppCompatActivity {
         plusSp = findViewById(R.id.plus_spies);
         minusTm = findViewById(R.id.minus_time);
         plusTm = findViewById(R.id.plus_time);
+
+        //Buttons, created to change settings parameters
         minusPl.setOnClickListener((v) -> Settings.minusPlayers(playersNumber));
         plusPl.setOnClickListener((v) -> Settings.plusPlayers(playersNumber));
         minusSp.setOnClickListener((v) -> Settings.minusSpies(spiesNumber));
@@ -49,10 +55,12 @@ public class SettingsPage extends AppCompatActivity {
         saveBtn.setOnClickListener(this::exitSettings);
     }
 
+    //Exits settings on pressed save button
     public void exitSettings(View view){
         finish();
     }
 
+    //Opens location choosing page
     public void openLocations(View view){
         Intent intent = new Intent(this, Locations.class);
         startActivity(intent);

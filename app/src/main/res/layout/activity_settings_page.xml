@@ -48,6 +48,7 @@
         </LinearLayout>
 
         <TextView
+            android:gravity="center"
             style="@style/SETTINGS_TEXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -81,6 +82,7 @@
         </LinearLayout>
 
         <TextView
+            android:gravity="center"
             style="@style/SETTINGS_TEXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,6 +116,7 @@
         </LinearLayout>
 
         <TextView
+            android:gravity="center"
             style="@style/SETTINGS_TEXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

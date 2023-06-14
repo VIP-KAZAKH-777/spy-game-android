@@ -13,9 +13,10 @@ import com.example.spy.models.KolodaCard;
 
 import java.util.List;
 
+//Basic adapter for swipe cards
 public class KolodaAdapter extends BaseAdapter{
-    private Context context;
-    private final List<KolodaCard> kolodaCards;
+    private Context context; //context
+    private final List<KolodaCard> kolodaCards; //list
 
     public KolodaAdapter(Context context, List<KolodaCard> kolodaCards) {
         this.context = context;
@@ -46,10 +47,10 @@ public class KolodaAdapter extends BaseAdapter{
         if (convertView == null) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_koloda, parent, false);
 
-            playNum = view.findViewById(R.id.player_num);
-            img = view.findViewById(R.id.player_img);
-            playType = view.findViewById(R.id.player_type);
-            playLoc = view.findViewById(R.id.player_location);
+            playNum = view.findViewById(R.id.player_num); //player number
+            img = view.findViewById(R.id.player_img); //player image
+            playType = view.findViewById(R.id.player_type); //player type
+            playLoc = view.findViewById(R.id.player_location); //player location
 
             KolodaCard curr = kolodaCards.get(position);
             playNum.setText(curr.getPlayerNum());

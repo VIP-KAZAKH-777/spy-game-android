@@ -1,6 +1,6 @@
 package com.example.spy.models;
 
-
+//This class is model for card with player num, location and type; used in KolodaAdapter
 public class KolodaCard {
     private static int players = 0;
     private String playerType;

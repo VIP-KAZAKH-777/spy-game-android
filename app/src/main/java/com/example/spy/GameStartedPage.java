@@ -23,11 +23,11 @@ import java.util.List;
 import java.util.Locale;
 
 public class GameStartedPage extends AppCompatActivity {
-    private KolodaAdapter kolodaAdapter;
-    private List<KolodaCard> kolodaCards;
-    private Koloda koloda;
-    private LinearLayout timerLayout;
-    private CardGenerator gen;
+    private KolodaAdapter kolodaAdapter; //adapter for swipe cards
+    private List<KolodaCard> kolodaCards; //swipe cards list
+    private Koloda koloda; //swipe cards layout
+    private LinearLayout timerLayout; //timer layout
+    private CardGenerator gen; //additional class to give every card player num, type
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +38,16 @@ public class GameStartedPage extends AppCompatActivity {
         LinearLayout cancelBtn = findViewById(R.id.cancel_layout);
         cancelBtn.setOnClickListener((v -> {
             finish();
-            KolodaCard.resetPLayers();
+            KolodaCard.resetPLayers(); //resets static field that sets player number
         }));
 
         koloda = findViewById(R.id.koloda);
 
         gen = new CardGenerator();
-        kolodaCards = gen.generateCards();
-        kolodaAdapter = new KolodaAdapter(this, kolodaCards);
-        koloda.setAdapter(kolodaAdapter);
-        koloda.setKolodaListener(new KolodaListener() {
+        kolodaCards = gen.generateCards(); //fills list by generated cards
+        kolodaAdapter = new KolodaAdapter(this, kolodaCards); //creating adapter
+        koloda.setAdapter(kolodaAdapter); //setting adapter
+        koloda.setKolodaListener(new KolodaListener() { //swipe cards listener, where used only 1 method -> onEmptyDeck()
             @Override
             public void onNewTopCard(int i) {
 
@@ -94,26 +94,28 @@ public class GameStartedPage extends AppCompatActivity {
 
             @Override
             public void onEmptyDeck() {
-                startTimerWorking();
+                startTimerWorking(); //Starts timer
             }
         });
     }
 
-    private CountDownTimer timer;
-    private TextView changeText, timerText;
-    private ImageButton pauseBtn, resetBtn;
-    private long timeLeft = Settings.TIME;
-    private boolean timerRunning;
+    //Code below creates and sets timer on the screen
+    private CountDownTimer timer; //Timer
+    private TextView changeText, timerText; //timerText -> main timer that is changed every second
+    private ImageButton pauseBtn, resetBtn; //timer controlling buttons
+    private long timeLeft = Settings.TIME; //left time in millsecs
+    private boolean timerRunning; //boolean to manage pause and resume
     private void startTimerWorking() {
-        timerLayout.setVisibility(View.VISIBLE);
+        timerLayout.setVisibility(View.VISIBLE); //by default visibility is gone, now it is visible
         changeText = findViewById(R.id.changeable_text);
-        changeText.setText(R.string.started);
+        changeText.setText(R.string.started); //changes title
         timerText = findViewById(R.id.timer);
         pauseBtn = findViewById(R.id.pause_button);
         resetBtn = findViewById(R.id.reset_button);
 
-        startTimer();
+        startTimer(); //starting timer
         pauseBtn.setOnClickListener(v -> {
+            //if timerRunning is true, we pause timer, otherwise start/resume
             if (timerRunning) {
                 pauseTimer();
             }
@@ -122,6 +124,7 @@ public class GameStartedPage extends AppCompatActivity {
             }
         });
         resetBtn.setOnClickListener(v -> {
+            //resets time and pauses timer
             pauseTimer();
             timeLeft = Settings.TIME;
             updateTimer(timeLeft);
@@ -129,13 +132,13 @@ public class GameStartedPage extends AppCompatActivity {
     }
 
     private void startTimer() {
-        pauseBtn.setImageResource(R.drawable.pause_circle);
+        pauseBtn.setImageResource(R.drawable.pause_circle); //if timer is run we set button pause image
         timerRunning = true;
-        timer = new CountDownTimer(timeLeft, 1000) {
+        timer = new CountDownTimer(timeLeft /* starting time */, 1000 /* The interval along the way to receive callbacks. */) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timeLeft = millisUntilFinished;
-                updateTimer(timeLeft);
+                updateTimer(timeLeft); // changes timer textview
             }
 
             @Override
@@ -147,7 +150,7 @@ public class GameStartedPage extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(GameStartedPage.this);
-                        builder.setMessage("Spies are: " + gen.getSpiesPositions()).show();
+                        builder.setMessage("Spies are: " + gen.getSpiesPositions()).show(); //if user presses show spies, new dialog is created with spies
                     }
                 })
                         .setNegativeButton("Leave", new DialogInterface.OnClickListener() {
@@ -163,15 +166,15 @@ public class GameStartedPage extends AppCompatActivity {
     }
 
     private void pauseTimer() {
-        pauseBtn.setImageResource(R.drawable.start);
+        pauseBtn.setImageResource(R.drawable.start); //start button image
         timer.cancel();
         timerRunning = false;
     }
 
     private void updateTimer(long timeLeft) {
-        int min = (int) (timeLeft/ 1000) / 60;
-        int sec = (int) (timeLeft / 1000) % 60;
-        String time = String.format(Locale.getDefault(),"%02d:%02d", min, sec);
-        timerText.setText(time);
+        int min = (int) (timeLeft/ 1000) / 60; //minutes
+        int sec = (int) (timeLeft / 1000) % 60; //seconds
+        String time = String.format(Locale.getDefault(),"%02d:%02d", min, sec); //formatting
+        timerText.setText(time); //setting
     }
 }

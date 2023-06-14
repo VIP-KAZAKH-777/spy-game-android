@@ -18,6 +18,7 @@ import com.example.spy.models.Location;
 
 public class MainActivity extends AppCompatActivity {
 
+    // SharedPreferences are used to monitor night and light mode. Mode is changed whenever the theme button is pressed.
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     ImageButton github, theme, help, settings;
@@ -27,13 +28,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE);
-        nightMode = sharedPreferences.getBoolean("night", true);
+        sharedPreferences = getSharedPreferences("MODE", Context.MODE_PRIVATE); //returns mode
+        nightMode = sharedPreferences.getBoolean("night", true); //checks is night mode on by default or not.
 
         github = findViewById(R.id.github_button);
         theme = findViewById(R.id.moon_button);
         help = findViewById(R.id.help_button);
         settings = findViewById(R.id.settings_button);
+        //Setting methods to buttons
         github.setOnClickListener(this::openGithub);
         theme.setOnClickListener(this::switchTheme);
         help.setOnClickListener(this::openRules);
@@ -44,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startGame() {
+        //If location is not chosen, game will not start
         if (Location.getLocations().size() == 0) {
             Toast.makeText(MainActivity.this, "Please choose locations in settings!", Toast.LENGTH_LONG).show();
             return;
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void switchTheme(View view) {
+        //changing boolean to it opposite
         nightMode = !nightMode;
         if (nightMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -77,9 +81,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //After the github button is pressed, this method creates alert dialog where user can see a source code of the app
     private void openGithub(View view){
-        String url = "https://github.com/VIP-KAZAKH-777/spy-game-android";
-        Uri uri = Uri.parse(url);
+        String url = "https://github.com/VIP-KAZAKH-777/spy-game-android"; //Link to github repository
+        Uri uri = Uri.parse(url); //Parsing string to uri
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);

@@ -9,6 +9,7 @@ import com.example.spy.models.Location;
 
 public class Locations extends AppCompatActivity {
 
+    //Stylized buttons
     private RelativeLayout places, countries, transports, rooms;
     private LinearLayout save_button;
 
@@ -23,6 +24,7 @@ public class Locations extends AppCompatActivity {
         rooms = findViewById(R.id.rooms_layout);
         save_button = findViewById(R.id.save_button);
 
+        //Every method opens dialog where user chooses locations to play
         places.setOnClickListener(v -> Location.selectLocation(1, this));
         countries.setOnClickListener(v -> Location.selectLocation(2, this));
         transports.setOnClickListener(v -> Location.selectLocation(3, this));
